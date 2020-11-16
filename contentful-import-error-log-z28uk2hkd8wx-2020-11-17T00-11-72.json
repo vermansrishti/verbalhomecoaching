@@ -1,0 +1,763 @@
+[
+  {
+    "ts": "2020-11-16T18:41:41.196Z",
+    "level": "error",
+    "error": {
+      "name": "BadRequest",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "p9ztf7mkb1tk"
+            }
+          },
+          "id": "layout",
+          "type": "ContentType",
+          "createdAt": "2020-09-01T10:52:57.371Z",
+          "updatedAt": "2020-09-11T05:34:21.388Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 13,
+          "publishedAt": "2020-09-11T05:34:21.388Z",
+          "firstPublishedAt": "2020-09-01T10:52:58.178Z",
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "4YVrlf9LVBCJgRMugl5FED"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "4YVrlf9LVBCJgRMugl5FED"
+            }
+          },
+          "publishedCounter": 7,
+          "version": 14,
+          "publishedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "4YVrlf9LVBCJgRMugl5FED"
+            }
+          }
+        },
+        "displayField": "title",
+        "name": "Layout",
+        "description": "Contains different layouts",
+        "fields": [
+          {
+            "id": "title",
+            "name": "Title",
+            "type": "Symbol",
+            "localized": false,
+            "required": true,
+            "validations": [
+            ],
+            "disabled": false,
+            "omitted": false
+          },
+          {
+            "id": "description",
+            "name": "Description",
+            "type": "Symbol",
+            "localized": false,
+            "required": false,
+            "validations": [
+            ],
+            "disabled": false,
+            "omitted": false
+          },
+          {
+            "id": "menu",
+            "name": "Menu",
+            "type": "Array",
+            "localized": false,
+            "required": false,
+            "validations": [
+            ],
+            "disabled": false,
+            "omitted": false,
+            "items": {
+              "type": "Link",
+              "validations": [
+                {
+                  "linkContentType": [
+                    "menu"
+                  ]
+                }
+              ],
+              "linkType": "Entry"
+            }
+          },
+          {
+            "id": "contentModule",
+            "name": "Content Module",
+            "type": "Array",
+            "localized": false,
+            "required": false,
+            "validations": [
+            ],
+            "disabled": false,
+            "omitted": false,
+            "items": {
+              "type": "Link",
+              "validations": [
+                {
+                  "linkContentType": [
+                    "layoutAbout",
+                    "layoutContact",
+                    "layoutHero",
+                    "layoutPageNotFound",
+                    "layoutPricing",
+                    "layoutServices",
+                    "layoutTestimonials"
+                  ]
+                }
+              ],
+              "linkType": "Entry"
+            }
+          }
+        ]
+      },
+      "data": {
+        "status": 400,
+        "statusText": "Bad Request",
+        "message": "You need to omit a field before deleting it",
+        "details": {
+          "errors": [
+            {
+              "message": "Field needs to be omitted",
+              "path": [
+                "fields",
+                "slug"
+              ]
+            },
+            {
+              "message": "Field needs to be omitted",
+              "path": [
+                "fields",
+                "contentModules"
+              ]
+            }
+          ],
+          "contentType": {
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "z28uk2hkd8wx"
+                }
+              },
+              "id": "layout",
+              "type": "ContentType",
+              "createdAt": "2020-11-16T18:39:01.899Z",
+              "updatedAt": "2020-11-16T18:39:01.899Z",
+              "environment": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Environment",
+                  "id": "069735d3-aaa1-40e9-ae57-f4b09620720e"
+                }
+              },
+              "revision": 1
+            },
+            "displayField": "title",
+            "name": "Layout",
+            "description": "A page consisting of freely configurable and rearrangeable content modules.",
+            "assembly": false,
+            "fields": [
+              {
+                "id": "title",
+                "apiName": "title",
+                "name": "Title",
+                "type": "Symbol",
+                "localized": false,
+                "required": true,
+                "validations": [
+                ],
+                "disabled": false,
+                "omitted": false,
+                "deleted": false
+              },
+              {
+                "id": "slug",
+                "apiName": "slug",
+                "name": "Slug",
+                "type": "Symbol",
+                "localized": false,
+                "required": true,
+                "validations": [
+                  {
+                    "unique": true
+                  }
+                ],
+                "disabled": false,
+                "omitted": false,
+                "deleted": false
+              },
+              {
+                "id": "contentModules",
+                "apiName": "contentModules",
+                "name": "Content Modules",
+                "type": "Array",
+                "localized": false,
+                "required": true,
+                "validations": [
+                ],
+                "disabled": false,
+                "omitted": false,
+                "deleted": false,
+                "items": {
+                  "type": "Link",
+                  "validations": [
+                    {
+                      "linkContentType": [
+                        "layoutCopy",
+                        "layoutHeroImage",
+                        "layoutHighlightedCourse"
+                      ]
+                    }
+                  ],
+                  "linkType": "Entry"
+                }
+              }
+            ]
+          }
+        },
+        "request": {
+          "url": "content_types/layout",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.import/7.9.6; feature library-import; sdk contentful-management.js/6.1.1; platform node.js/v12.18.2; os Linux/5.4.0-47-generic;",
+            "Authorization": "Bearer ...7cyks",
+            "user-agent": "node.js/v12.18.2",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 2,
+            "Content-Length": 929
+          },
+          "method": "put",
+          "payloadData": "{\"displayField\":\"title\",\"name\":\"Layout\",\"description\":\"Contains different layouts\",\"fields\":[{\"id\":\"title\",\"name\":\"Title\",\"type\":\"Symbol\",\"localized\":false,\"required\":true,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"description\",\"name\":\"Description\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"menu\",\"name\":\"Menu\",\"type\":\"Array\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false,\"items\":{\"type\":\"Link\",\"validations\":[{\"linkContentType\":[\"menu\"]}],\"linkType\":\"Entry\"}},{\"id\":\"contentModule\",\"name\":\"Content Module\",\"type\":\"Array\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false,\"items\":{\"type\":\"Link\",\"validations\":[{\"linkContentType\":[\"layoutAbout\",\"layoutContact\",\"layoutHero\",\"layoutPageNotFound\",\"layoutPricing\",\"layoutServices\",\"layoutTestimonials\"]}],\"linkType\":\"Entry\"}}]}"
+        },
+        "requestId": "a64659d5dd5d48b0deb0547bb704f4a8"
+      }
+    }
+  },
+  {
+    "ts": "2020-11-16T18:44:29.599Z",
+    "level": "error",
+    "error": {
+      "name": "UnknownField",
+      "entity": {
+        "original": {
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "p9ztf7mkb1tk"
+              }
+            },
+            "id": "1MtSg1Lc1Cbyp8IZccAGv5",
+            "type": "Entry",
+            "createdAt": "2020-09-01T11:50:50.383Z",
+            "updatedAt": "2020-09-11T07:04:18.305Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "publishedVersion": 27,
+            "publishedAt": "2020-09-11T07:04:18.305Z",
+            "firstPublishedAt": "2020-09-01T11:59:29.554Z",
+            "createdBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "4YVrlf9LVBCJgRMugl5FED"
+              }
+            },
+            "updatedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "4YVrlf9LVBCJgRMugl5FED"
+              }
+            },
+            "publishedCounter": 10,
+            "version": 28,
+            "publishedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "4YVrlf9LVBCJgRMugl5FED"
+              }
+            },
+            "contentType": {
+              "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "layout"
+              }
+            }
+          },
+          "fields": {
+            "title": {
+              "en-US": "Homepage"
+            },
+            "description": {
+              "en-US": "Website's main page"
+            },
+            "menu": {
+              "en-US": [
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "4muLvoORp8plqpv4itaudo"
+                  }
+                },
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "5dOwFPRPmYjFJX1Tn96Qkr"
+                  }
+                }
+              ]
+            },
+            "contentModule": {
+              "en-US": [
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "3TD6B60380bRg8a1Yemrh1"
+                  }
+                },
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "3P3LaT9TfLhTjTmYuMqM5"
+                  }
+                },
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "3z5GvjpSTppkGCSkeO3t9f"
+                  }
+                },
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "2Y0uWhHndzhFEfiMymI9A8"
+                  }
+                },
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "5mOkRvcg880yautzJyCclE"
+                  }
+                },
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "4iMGLJwbYOmLwbK43ujDW9"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "transformed": {
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "p9ztf7mkb1tk"
+              }
+            },
+            "id": "1MtSg1Lc1Cbyp8IZccAGv5",
+            "type": "Entry",
+            "createdAt": "2020-09-01T11:50:50.383Z",
+            "updatedAt": "2020-09-11T07:04:18.305Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "publishedVersion": 27,
+            "publishedAt": "2020-09-11T07:04:18.305Z",
+            "firstPublishedAt": "2020-09-01T11:59:29.554Z",
+            "createdBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "4YVrlf9LVBCJgRMugl5FED"
+              }
+            },
+            "updatedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "4YVrlf9LVBCJgRMugl5FED"
+              }
+            },
+            "publishedCounter": 10,
+            "version": 28,
+            "publishedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "4YVrlf9LVBCJgRMugl5FED"
+              }
+            },
+            "contentType": {
+              "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "layout"
+              }
+            }
+          },
+          "fields": {
+            "title": {
+              "en-US": "Homepage"
+            },
+            "description": {
+              "en-US": "Website's main page"
+            },
+            "menu": {
+              "en-US": [
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "4muLvoORp8plqpv4itaudo"
+                  }
+                },
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "5dOwFPRPmYjFJX1Tn96Qkr"
+                  }
+                }
+              ]
+            },
+            "contentModule": {
+              "en-US": [
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "3TD6B60380bRg8a1Yemrh1"
+                  }
+                },
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "3P3LaT9TfLhTjTmYuMqM5"
+                  }
+                },
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "3z5GvjpSTppkGCSkeO3t9f"
+                  }
+                },
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "2Y0uWhHndzhFEfiMymI9A8"
+                  }
+                },
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "5mOkRvcg880yautzJyCclE"
+                  }
+                },
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "4iMGLJwbYOmLwbK43ujDW9"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "No field with id \"description\" found.",
+        "details": {
+          "errors": [
+            {
+              "name": "unknown",
+              "path": [
+                "fields",
+                "description"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "entries/1MtSg1Lc1Cbyp8IZccAGv5",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.import/7.9.6; feature library-import; sdk contentful-management.js/6.1.1; platform node.js/v12.18.2; os Linux/5.4.0-47-generic;",
+            "Authorization": "Bearer ...7cyks",
+            "user-agent": "node.js/v12.18.2",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Content-Type": "layout",
+            "Content-Length": 717
+          },
+          "method": "put",
+          "payloadData": "{\"fields\":{\"title\":{\"en-US\":\"Homepage\"},\"description\":{\"en-US\":\"Website's main page\"},\"menu\":{\"en-US\":[{\"sys\":{\"type\":\"Link\",\"linkType\":\"Entry\",\"id\":\"4muLvoORp8plqpv4itaudo\"}},{\"sys\":{\"type\":\"Link\",\"linkType\":\"Entry\",\"id\":\"5dOwFPRPmYjFJX1Tn96Qkr\"}}]},\"contentModule\":{\"en-US\":[{\"sys\":{\"type\":\"Link\",\"linkType\":\"Entry\",\"id\":\"3TD6B60380bRg8a1Yemrh1\"}},{\"sys\":{\"type\":\"Link\",\"linkType\":\"Entry\",\"id\":\"3P3LaT9TfLhTjTmYuMqM5\"}},{\"sys\":{\"type\":\"Link\",\"linkType\":\"Entry\",\"id\":\"3z5GvjpSTppkGCSkeO3t9f\"}},{\"sys\":{\"type\":\"Link\",\"linkType\":\"Entry\",\"id\":\"2Y0uWhHndzhFEfiMymI9A8\"}},{\"sys\":{\"type\":\"Link\",\"linkType\":\"Entry\",\"id\":\"5mOkRvcg880yautzJyCclE\"}},{\"sys\":{\"type\":\"Link\",\"linkType\":\"Entry\",\"id\":\"4iMGLJwbYOmLwbK43ujDW9\"}}]}}}"
+        },
+        "requestId": "cc75e156e6070def4e492ee6bac1d2e3"
+      }
+    }
+  },
+  {
+    "ts": "2020-11-16T18:44:35.082Z",
+    "level": "error",
+    "error": {
+      "name": "UnknownField",
+      "entity": {
+        "original": {
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "p9ztf7mkb1tk"
+              }
+            },
+            "id": "qNAnDgZ2agHYnFfdL10Ya",
+            "type": "Entry",
+            "createdAt": "2020-09-11T04:22:42.856Z",
+            "updatedAt": "2020-09-11T07:37:39.899Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "publishedVersion": 5,
+            "publishedAt": "2020-09-11T07:37:39.899Z",
+            "firstPublishedAt": "2020-09-11T04:23:51.433Z",
+            "createdBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "4YVrlf9LVBCJgRMugl5FED"
+              }
+            },
+            "updatedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "4YVrlf9LVBCJgRMugl5FED"
+              }
+            },
+            "publishedCounter": 2,
+            "version": 6,
+            "publishedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "4YVrlf9LVBCJgRMugl5FED"
+              }
+            },
+            "contentType": {
+              "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "layout"
+              }
+            }
+          },
+          "fields": {
+            "title": {
+              "en-US": "404"
+            },
+            "description": {
+              "en-US": "404 page"
+            },
+            "menu": {
+              "en-US": [
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "7jKRyRMi3drJNvYpBi8sH9"
+                  }
+                }
+              ]
+            },
+            "contentModule": {
+              "en-US": [
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "4v8G9gNG9etsMxvOBpyY0g"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "transformed": {
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "p9ztf7mkb1tk"
+              }
+            },
+            "id": "qNAnDgZ2agHYnFfdL10Ya",
+            "type": "Entry",
+            "createdAt": "2020-09-11T04:22:42.856Z",
+            "updatedAt": "2020-09-11T07:37:39.899Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "publishedVersion": 5,
+            "publishedAt": "2020-09-11T07:37:39.899Z",
+            "firstPublishedAt": "2020-09-11T04:23:51.433Z",
+            "createdBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "4YVrlf9LVBCJgRMugl5FED"
+              }
+            },
+            "updatedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "4YVrlf9LVBCJgRMugl5FED"
+              }
+            },
+            "publishedCounter": 2,
+            "version": 6,
+            "publishedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "4YVrlf9LVBCJgRMugl5FED"
+              }
+            },
+            "contentType": {
+              "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "layout"
+              }
+            }
+          },
+          "fields": {
+            "title": {
+              "en-US": "404"
+            },
+            "description": {
+              "en-US": "404 page"
+            },
+            "menu": {
+              "en-US": [
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "7jKRyRMi3drJNvYpBi8sH9"
+                  }
+                }
+              ]
+            },
+            "contentModule": {
+              "en-US": [
+                {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Entry",
+                    "id": "4v8G9gNG9etsMxvOBpyY0g"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "No field with id \"description\" found.",
+        "details": {
+          "errors": [
+            {
+              "name": "unknown",
+              "path": [
+                "fields",
+                "description"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "entries/qNAnDgZ2agHYnFfdL10Ya",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.import/7.9.6; feature library-import; sdk contentful-management.js/6.1.1; platform node.js/v12.18.2; os Linux/5.4.0-47-generic;",
+            "Authorization": "Bearer ...7cyks",
+            "user-agent": "node.js/v12.18.2",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Content-Type": "layout",
+            "Content-Length": 264
+          },
+          "method": "put",
+          "payloadData": "{\"fields\":{\"title\":{\"en-US\":\"404\"},\"description\":{\"en-US\":\"404 page\"},\"menu\":{\"en-US\":[{\"sys\":{\"type\":\"Link\",\"linkType\":\"Entry\",\"id\":\"7jKRyRMi3drJNvYpBi8sH9\"}}]},\"contentModule\":{\"en-US\":[{\"sys\":{\"type\":\"Link\",\"linkType\":\"Entry\",\"id\":\"4v8G9gNG9etsMxvOBpyY0g\"}}]}}}"
+        },
+        "requestId": "f129ceaa1ac9dc631a3bf0169ab05785"
+      }
+    }
+  }
+]
