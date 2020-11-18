@@ -3,7 +3,6 @@ require("dotenv").config({
 });
 
 module.exports = {
-    pathPrefix: "/verbalhomecoaching",
     siteMetadata: {
         title: `Verbal Home Coaching`,
         description: `Verbal Home Coaching Space.`,
