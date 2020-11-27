@@ -25,4 +25,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
+    - run: git config --global user.name verbalhomecoaching
+    - run: git config --global user.email service@verbalhomecoaching.com
     - run: npm run deploy
