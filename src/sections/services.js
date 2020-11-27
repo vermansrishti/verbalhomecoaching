@@ -13,15 +13,9 @@ const Services = ({ contentModuleId }) => {
                     node {
                         id
                         heading
-                        description {
-                            description
-                        }
                         serviceItems {
                             id
                             title
-                            description {
-                                description
-                            }
                             image {
                                 fluid(quality: 100, maxWidth: 208, maxHeight: 146) {
                                     ...GatsbyContentfulFluid
