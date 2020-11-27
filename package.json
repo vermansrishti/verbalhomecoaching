@@ -8,7 +8,7 @@
     "setup": "node ./bin/setup.js",
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "echo \"verbalhomecoaching.com\" > public/CNAME && gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "mkdir -p public && echo \"verbalhomecoaching.com\" > public/CNAME && gatsby build --prefix-paths && gh-pages -d public",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
