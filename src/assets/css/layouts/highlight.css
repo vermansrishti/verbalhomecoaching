@@ -1,0 +1,39 @@
+.floater {
+    position: fixed;
+    right: 3%;
+    top: 5%;
+    background-color: #6C61F6;
+    border-radius: 30px;
+    padding: 5px 15px;
+    margin-right: 22px;
+    margin-bottom: 5px;
+    color: white;
+    z-index: 100;
+    font-weight: 600;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+    transition: all .2s ease-in-out;
+}
+
+.floater:hover {
+    transform: scale(1.1);
+}
+
+.blink {
+    margin-top: 7px;
+}
+
+.link {
+    font-size: 1rem;
+}
+
+.float-left {
+    float: left;
+    margin-top: 6px;
+}
+
+@screen sm { 
+    .floater {
+        right: 5%;
+        top: 15%;
+    }
+}

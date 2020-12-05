@@ -39,10 +39,21 @@ const Contact = ({ contentModuleId }) => {
             <div className="contact__content">
                 <h2 className="section__title" data-sal="fade" data-sal-easing="ease-in-cubic">{ content.node.heading }</h2>
                 <p className="mb-4 w-full md:w-3/4" data-sal="slide-up" data-sal-easing="ease-in-cubic">{ content.node.description.description }</p>
-                <form id="contact_form" className="w-full md:w-3/4" noValidate data-sal="slide-up" data-sal-easing="ease-in-cubic" data-sal-delay="100">
+                <form
+                    action="https://mailthis.to/verbalhomecoaching"
+                    method="POST"
+                    id="contact_form"
+                    className="w-full md:w-3/4"
+                    noValidate
+                    data-sal="slide-up"
+                    data-sal-easing="ease-in-cubic"
+                    data-sal-delay="100"
+                >
                     <div className="input-group mb-2">
                         <label htmlFor="name">Name</label>
                         <input type="text" id="name" className="input" name="name" />
+                        <input type="hidden" name="_subject" value="Verbal Home Coaching: Contact form submitted" />
+                        <input type="hidden" name="_confirmation" value="The message has been successfully submitted. We'll contact you soon." />
                     </div>
                     <div className="input-group mb-2">
                         <label htmlFor="email">Email</label>

@@ -19,7 +19,7 @@ const Footer = ({ menus }) => {
         }
     `);
 
-    const footerMenu = (menus !== null &&  menus !== undefined) ? menus.find(menu => menu.type === 'secondary') : null;
+    // const footerMenu = (menus !== null &&  menus !== undefined) ? menus.find(menu => menu.type === 'secondary') : null;
 
     return (
         <footer className="footer bg-tertiary text-white">
@@ -53,7 +53,7 @@ const Footer = ({ menus }) => {
                         </li>
                     </ul>
                 </div>
-                {
+                {/* {
                     (footerMenu !== null && footerMenu !== undefined) &&
                     <div className="footer__content">
                         <h3 className="text-lg font-bold mb-4">Menu Links</h3>
@@ -65,23 +65,23 @@ const Footer = ({ menus }) => {
                             }
                         </ul>
                     </div>
-                }
+                } */}
                 <div className="footer__content">
                     <h3 className="text-lg font-bold mb-4">Follow Us</h3>
                     <ul className="flex text-sm">
                         <li className="mb-2 mr-4">
-                            <a href={ data.contentfulContactDetails.facebookUrl }>
-                                <img className="w-6 h-6" src={ require('assets/images/facebook.svg') }  alt="Facebook Icon" />
+                            <a href={ data.contentfulContactDetails.instagramUrl }>
+                                <img className="footer-icon" src={ require('assets/images/white-instagram.png') } alt="Instagram Icon" />
                             </a>
                         </li>
                         <li className="mb-2 mr-4">
                             <a href={ data.contentfulContactDetails.twitterUrl }>
-                                <img className="w-6 h-6" src={ require('assets/images/twitter.svg') } alt="Twitter Icon" />
+                                <img className="footer-icon" src={ require('assets/images/white-linkedin.png') } alt="LinkedIn Icon" />
                             </a>
                         </li>
                         <li className="mb-2 mr-4">
-                            <a href={ data.contentfulContactDetails.instagramUrl }>
-                                <img className="w-6 h-6" src={ require('assets/images/instagram.svg') } alt="Instagram Icon" />
+                            <a href={ data.contentfulContactDetails.facebookUrl }>
+                                <img className="footer-icon" src={ require('assets/images/white-facebook.png') }  alt="Facebook Icon" />
                             </a>
                         </li>
                     </ul>

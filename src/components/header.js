@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React, { useEffect } from 'react';
+import Highlight from './highlight';
 import PropTypes from 'prop-types';
 
 const Header = ({ menus }) => {
@@ -55,7 +56,7 @@ const Header = ({ menus }) => {
 
     return (
         <header className="header container">
-            <Link to="/" className="nav__menu" style={{fontSize: '2rem'}}>
+            <Link to="/" className="nav__menu" style={{fontSize: '2rem', fontWeight: 500}}>
                 Verbal Home Coaching
                 {/* <img src={ require('assets/images/logo.svg') } alt="site logo" /> */}
             </Link>
@@ -63,6 +64,7 @@ const Header = ({ menus }) => {
                 (mainMenu !== null && mainMenu !== undefined) &&
                 <nav className="nav">
                     <h2 className="hidden">Top navigation</h2>
+                    <Highlight />
                     <ul id="nav_menu" className="nav__menu">
                         {
                             mainMenu.menuItems.map(item => (
