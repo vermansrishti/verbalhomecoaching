@@ -67,7 +67,7 @@ const Footer = ({ menus }) => {
                     </div>
                 } */}
                 <div className="footer__content">
-                    <h3 className="text-lg font-bold mb-4">Follow Us</h3>
+                    {/* <h3 className="text-lg font-bold mb-4">Follow Us</h3>
                     <ul className="flex text-sm">
                         <li className="mb-2 mr-4">
                             <a href={ data.contentfulContactDetails.instagramUrl }>
@@ -84,7 +84,7 @@ const Footer = ({ menus }) => {
                                 <img className="footer-icon" src={ require('assets/images/white-facebook.png') }  alt="Facebook Icon" />
                             </a>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
         </footer>
